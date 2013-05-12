@@ -1,0 +1,726 @@
+// Place all the styles related to the posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+/* Tag_cloud */
+
+@mixin css-gradient($from, $middle, $catch, $to, $stop, $stop1, $stop2, $stop3) {
+    background: $to;
+    background: -webkit-linear-gradient(top, $from $stop, $middle $stop1, $catch $stop2, $to $stop3);
+    background: -moz-linear-gradient(top, $from $stop, $middle $stop1, $catch $stop2, $to $stop3);
+    background: -o-linear-gradient(top, $from $stop, $middle $stop1, $catch $stop2, $to $stop3);
+    background: -ms-linear-gradient(top, $from $stop, $middle $stop1, $catch $stop2, $to $stop3);
+    background: linear-gradient(to bottom, $from $stop, $middle $stop1, $catch $stop2, $to $stop3);
+}
+
+
+
+
+@font-face {
+  font-family: 'quicksandbold';
+  src: url(font-path('quicksand_bold-webfont.eot') + "?#iefix") format('embedded-opentype'),
+       url(font-path('quicksand_bold-webfont.woff')) format('woff'),
+       url(font-path('quicksand_bold-webfont.ttf'))  format('truetype'),
+       url(font-path('quicksand_bold-webfont.svg') + "#MyFont") format('svg');
+}
+
+@font-face {
+  font-family: 'quicksandbook';
+  src: url(font-path('quicksand_book_copy-webfont.eot') + "?#iefix") format('embedded-opentype'),
+       url(font-path('quicksand_book_copy-webfont.woff')) format('woff'),
+       url(font-path('quicksand_book_copy-webfont.ttf'))  format('truetype'),
+       url(font-path('quicksand_book_copy-webfont.svg') + "#MyFont") format('svg');
+}
+
+@mixin box-shadow($params) {
+  -webkit-box-shadow: $params;
+  -moz-box-shadow: $params;
+  box-shadow: $params;
+}
+$bottomform: 0px 2px 2px rgba(0, 0, 0, 0.15);
+
+$formshadows: 0px 2px 2px rgba(0, 0, 0, 0.15), 1px 1px 1px rgba(255,255,255,0.15) inset;
+
+          ::-webkit-input-placeholder { /* WebKit browsers */
+    color:    #fff;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color:    #fff;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color:    #fff;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color:    #fff;
+}
+input {
+ outline:none;
+}
+
+body {
+  font-size: 100%;
+    color: #fff;
+    width: 100%;
+    font-family: "quicksandbold", helvetica;  
+    @include css-gradient(rgba(115, 205, 203, 1), rgba(92, 196, 180, 1), rgba(105, 191, 150, 1), rgba(101, 193, 137, 1), 32%, 65%, 84%, 100% );
+   // @include gradient(rgba(65, 200, 142, 1), rgba(154, 199, 101, 1), rgba(205, 201, 42, 1), rgba(235, 214, 14, .95)); 
+  -webkit-transition: all .5s linear;  
+    -moz-transition: all .5s linear;  
+    -o-transition: all .5s linear;  
+    -ms-transition: all .5s linear;  
+    transition: all .5s linear; }
+
+
+//Main Styles
+body, html {height: 100%; width: 100%; padding: 0; margin: 0;}
+
+header#melon {width: 1040px; margin: 0 auto;}
+section.main_wrap {width: 1040px; margin: 10px auto;}
+h2.question {font-family: "quicksandbook", helvetica; font-size: 1.5em; font-weight: 400; text-align: left; margin: 19px 0 15px 9px; width: 320px; float: left; text-shadow: 0px -1px 1px rgba(0, 0, 0, 0.2);}
+
+.form {
+  width: 550px;
+  margin: 0 auto;
+  text-align: center;
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 1em;
+  margin-bottom: 2.6em;
+  float: left;
+}
+
+
+// BODY BACKGROUND GRADIENT
+.color1 { @include css-gradient(rgba(115, 205, 202, 1), rgba(92, 196, 176, 1), rgba(105, 191, 150, 1), rgba(102, 193, 137, 1), 25%, 64%, 84%, 100% ); }
+.color2 { @include css-gradient(rgba(115, 205, 199, 1), rgba(92, 196, 173, 1), rgba(105, 191, 148, 1), rgba(104, 193, 135, 1), 25%, 62%, 82%, 100% ); }
+.color3 { @include css-gradient(rgba(115, 205, 196, 1), rgba(92, 196, 169, 1), rgba(105, 191, 146, 1), rgba(106, 193, 133, 1), 24%, 60%, 80%, 100% ); }
+.color4 { @include css-gradient(rgba(115, 205, 193, 1), rgba(92, 196, 166, 1), rgba(105, 191, 143, 1), rgba(108, 193, 131, 1), 24%, 58%, 78%, 100% ); }
+.color5 { @include css-gradient(rgba(115, 205, 191, 1), rgba(92, 196, 164, 1), rgba(105, 191, 141, 1), rgba(109, 193, 129, 1), 23%, 56%, 77%, 100% ); }
+.color6 { @include css-gradient(rgba(115, 205, 189, 1), rgba(92, 196, 162, 1), rgba(104, 191, 140, 1), rgba(110, 193, 127, 1), 23%, 55%, 76%, 100% ); }
+.color7 { @include css-gradient(rgba(115, 205, 187, 1), rgba(92, 196, 160, 1), rgba(104, 191, 140, 1), rgba(110, 193, 127, 1), 22%, 54%, 75%, 100% ); }
+.color8 { @include css-gradient(rgba(115, 205, 186, 1), rgba(92, 196, 158, 1), rgba(104, 191, 138, 1), rgba(111, 193, 126, 1), 21%, 52%, 74%, 100% ); }
+.color9 { @include css-gradient(rgba(115, 205, 185, 1), rgba(92, 196, 156, 1), rgba(104, 191, 137, 1), rgba(111, 193, 126, 1), 21%, 52%, 74%, 100% ); }
+.color10 { @include css-gradient(rgba(115, 205, 183, 1), rgba(92, 196, 156, 1), rgba(104, 191, 137, 1), rgba(111, 193, 126, 1), 21%, 52%, 74%, 100% ); }
+.color11 { @include css-gradient(rgba(115, 205, 182, 1), rgba(92, 196, 155, 1), rgba(104, 191, 136, 1), rgba(113, 193, 125, 1), 20%, 51%, 74%, 100% ); }
+.color12 { @include css-gradient(rgba(115, 205, 180, 1), rgba(92, 196, 154, 1), rgba(104, 191, 136, 1), rgba(114, 193, 123, 1), 20%, 50%, 73%, 100% ); }
+.color13 { @include css-gradient(rgba(115, 205, 179, 1), rgba(92, 196, 153, 1), rgba(104, 191, 135, 1), rgba(115, 193, 121, 1), 20%, 50%, 73%, 100% ); }
+.color14 { @include css-gradient(rgba(115, 205, 178, 1), rgba(92, 196, 152, 1), rgba(104, 190, 134, 1), rgba(116, 193, 119, 1), 22%, 51%, 73%, 100% ); }
+.color15 { @include css-gradient(rgba(115, 205, 177, 1), rgba(93, 196, 151, 1), rgba(105, 189, 133, 1), rgba(117, 193, 117, 1), 23%, 51%, 73%, 100% ); }
+.color16 { @include css-gradient(rgba(115, 205, 176, 1), rgba(94, 196, 150, 1), rgba(105, 188, 132, 1), rgba(118, 193, 116, 1), 24%, 51%, 74%, 100% ); }
+.color17 { @include css-gradient(rgba(115, 205, 175, 1), rgba(96, 196, 149, 1), rgba(105, 188, 131, 1), rgba(119, 193, 115, 1), 24%, 51%, 74%, 100% ); }
+.color18 { @include css-gradient(rgba(116, 205, 174, 1), rgba(97, 196, 148, 1), rgba(106, 188, 130, 1), rgba(120, 193, 113, 1), 24%, 51%, 74%, 100% ); }
+.color19 { @include css-gradient(rgba(117, 205, 173, 1), rgba(98, 196, 147, 1), rgba(107, 188, 129, 1), rgba(121, 193, 112, 1), 25%, 51%, 74%, 100% ); }
+.color20 { @include css-gradient(rgba(119, 205, 171, 1), rgba(100, 196, 145, 1), rgba(108, 188, 127, 1), rgba(123, 193, 110, 1), 26%, 51%, 74%, 100% ); }
+.color21 { @include css-gradient(rgba(120, 205, 170, 1), rgba(100, 196, 144, 1), rgba(109, 188, 126, 1), rgba(124, 193, 109, 1), 26%, 51%, 74%, 100% ); }
+.color22 { @include css-gradient(rgba(120, 205, 170, 1), rgba(100, 196, 143, 1), rgba(110, 188, 125, 1), rgba(125, 193, 108, 1), 26%, 51%, 74%, 100% ); }
+.color23 { @include css-gradient(rgba(120, 205, 170, 1), rgba(100, 196, 142, 1), rgba(110, 188, 124, 1), rgba(126, 193, 107, 1), 26%, 51%, 74%, 100% ); }
+.color24 { @include css-gradient(rgba(120, 205, 170, 1), rgba(100, 196, 141, 1), rgba(111, 188, 123, 1), rgba(126, 193, 105, 1), 26%, 51%, 74%, 100% ); }
+.color25 { @include css-gradient(rgba(120, 205, 170, 1), rgba(100, 196, 140, 1), rgba(112, 188, 122, 1), rgba(127, 193, 103, 1), 26%, 51%, 74%, 100% ); }
+.color26 { @include css-gradient(rgba(121, 205, 170, 1), rgba(100, 196, 139, 1), rgba(113, 188, 121, 1), rgba(128, 193, 101, 1), 26%, 51%, 74%, 100% ); }
+.color27{ @include css-gradient(rgba(122, 205, 170, 1), rgba(101, 196, 138, 1), rgba(114, 188, 120, 1), rgba(129, 193, 100, 1), 26%, 50%, 74%, 100% ); }
+.color28{ @include css-gradient(rgba(123, 205, 170, 1), rgba(102, 196, 137, 1), rgba(115, 188, 119, 1), rgba(129, 193, 99, 1), 25%, 50%, 74%, 100% ); }
+.color29 { @include css-gradient(rgba(124, 205, 169, 1), rgba(103, 196, 137, 1), rgba(116, 188, 118, 1), rgba(131, 193, 97, 1), 25%, 50%, 74%, 100% ); }
+.color30 { @include css-gradient(rgba(124, 205, 169, 1), rgba(103, 196, 137, 1), rgba(116, 188, 118, 1), rgba(131, 193, 97, 1), 25%, 50%, 74%, 100% ); }
+.color31 { @include css-gradient(rgba(125, 205, 168, 1), rgba(104, 196, 137, 1), rgba(117, 188, 117, 1), rgba(132, 195, 96, 1), 25%, 50%, 74%, 100% ); }
+.color32 { @include css-gradient(rgba(126, 205, 167, 1), rgba(105, 196, 137, 1), rgba(118, 188, 116, 1), rgba(134, 196, 94, 1), 26%, 49%, 74%, 100% ); }
+.color33 { @include css-gradient(rgba(126, 205, 166, 1), rgba(106, 197, 136, 1), rgba(119, 189, 115, 1), rgba(135, 197, 93, 1), 26%, 49%, 74%, 100% ); }
+.color34 { @include css-gradient(rgba(126, 205, 165, 1), rgba(107, 198, 135, 1), rgba(120, 190, 114, 1), rgba(136, 198, 91, 1), 26%, 49%, 74%, 100% ); }
+.color35 { @include css-gradient(rgba(126, 205, 164, 1), rgba(108, 199, 134, 1), rgba(121, 191, 113, 1), rgba(138, 199, 90, 1), 26%, 49%, 73%, 100% ); }
+.color36 { @include css-gradient(rgba(127, 205, 163, 1), rgba(109, 200, 133, 1), rgba(122, 192, 112, 1), rgba(140, 200, 89, 1), 26%, 49%, 72%, 100% ); }
+.color37 { @include css-gradient(rgba(127, 205, 162, 1), rgba(110, 201, 132, 1), rgba(123, 192, 112, 1), rgba(142, 201, 89, 1), 26%, 49%, 71%, 100% ); }
+.color38 { @include css-gradient(rgba(128, 205, 161, 1), rgba(111, 202, 130, 1), rgba(124, 192, 111, 1), rgba(144, 202, 89, 1), 26%, 48%, 71%, 100% ); }
+.color39 { @include css-gradient(rgba(129, 204, 160, 1), rgba(112, 203, 129, 1), rgba(126, 193, 110, 1), rgba(146, 203, 89, 1), 26%, 48%, 71%, 100% ); }
+.color40 { @include css-gradient(rgba(130, 204, 158, 1), rgba(113, 204, 129, 1), rgba(128, 194, 109, 1), rgba(148, 204, 89, 1), 26%, 48%, 70%, 100% ); }
+.color41 { @include css-gradient(rgba(131, 204, 157, 1), rgba(114, 205, 127, 1), rgba(129, 194, 108, 1), rgba(151, 205, 90, 1), 26%, 47%, 70%, 100% ); }
+.color42 { @include css-gradient(rgba(130, 204, 156, 1), rgba(115, 206, 125, 1), rgba(130, 194, 106, 1), rgba(154, 204, 91, 1), 26%, 47%, 69%, 100% ); }
+.color43 { @include css-gradient(rgba(129, 204, 155, 1), rgba(116, 207, 123, 1), rgba(132, 194, 104, 1), rgba(157, 202, 90, 1), 25%, 47%, 68%, 100% ); }
+.color44 { @include css-gradient(rgba(128, 204, 154, 1), rgba(119, 208, 121, 1), rgba(134, 195, 101, 1), rgba(160, 200, 89, 1), 25%, 46%, 67%, 100% ); }
+.color45 { @include css-gradient(rgba(127, 203, 153, 1), rgba(122, 200, 119, 1), rgba(136, 196, 99, 1), rgba(163, 198, 88, 1), 25%, 46%, 66%, 100% ); }
+.color46 { @include css-gradient(rgba(127, 202, 152, 1), rgba(125, 200, 117, 1), rgba(138, 197, 97, 1), rgba(168, 196, 86, 1), 25%, 46%, 65%, 100% ); }
+.color47 { @include css-gradient(rgba(127, 201, 150, 1), rgba(127, 200, 115, 1), rgba(140, 197, 96, 1), rgba(172, 192, 84, 1), 25%, 45%, 64%, 100% ); }
+.color48 { @include css-gradient(rgba(126, 200, 148, 1), rgba(127, 200, 114, 1), rgba(142, 196, 94, 1), rgba(174, 190, 82, 1), 25%, 45%, 64%, 100% ); }
+.color49 { @include css-gradient(rgba(126, 199, 146, 1), rgba(127, 200, 112, 1), rgba(145, 194, 92, 1), rgba(176, 188, 80, 1), 24%, 44%, 64%, 100% ); }
+.color50 { @include css-gradient(rgba(126, 198, 144, 1), rgba(129, 200, 110, 1), rgba(147, 193, 90, 1), rgba(179, 185, 78, 1), 24%, 44%, 64%, 100% ); }
+.color51 { @include css-gradient(rgba(126, 198, 142, 1), rgba(130, 200, 108, 1), rgba(150, 192, 88, 1), rgba(182, 183, 76, 1), 23%, 43%, 64%, 100% ); }
+.color52 { @include css-gradient(rgba(126, 198, 140, 1), rgba(130, 200, 106, 1), rgba(152, 192, 85, 1), rgba(185, 181, 74, 1), 23%, 42%, 64%, 100% ); }
+.color53 { @include css-gradient(rgba(125, 198, 138, 1), rgba(132, 200, 104, 1), rgba(154, 192, 83, 1), rgba(188, 178, 72, 1), 22%, 41%, 64%, 100% ); }
+.color54 { @include css-gradient(rgba(125, 198, 137, 1), rgba(134, 200, 102, 1), rgba(156, 191, 81, 1), rgba(191, 176, 70, 1), 22%, 41%, 64%, 100% ); }
+.color55 { @include css-gradient(rgba(124, 199, 135, 1), rgba(136, 200, 100, 1), rgba(156, 191, 79, 1), rgba(193, 174, 68, 1), 21%, 43%, 64%, 100% ); }
+.color56 { @include css-gradient(rgba(124, 198, 134, 1), rgba(138, 200, 100, 1), rgba(157, 191, 77, 1), rgba(195, 172, 66, 1), 21%, 43%, 64%, 100% ); }
+.color57 { @include css-gradient(rgba(124, 198, 133, 1), rgba(140, 200, 98, 1), rgba(159, 190, 75, 1), rgba(197, 170, 64, 1), 20%, 43%, 64%, 100% ); }
+.color58 { @include css-gradient(rgba(124, 197, 131, 1), rgba(142, 200, 96, 1), rgba(161, 190, 73, 1), rgba(200, 168, 63, 1), 22%, 42%, 64%, 100% ); }
+.color59 { @include css-gradient(rgba(124, 197, 129, 1), rgba(144, 200, 95, 1), rgba(162, 189, 71, 1), rgba(203, 166, 60, 1), 22%, 41%, 64%, 100% ); }
+.color60 { @include css-gradient(rgba(123, 196, 127, 1), rgba(148, 200, 93, 1), rgba(164, 189, 69, 1), rgba(205, 164, 59, 1), 22%, 41%, 64%, 100% ); }
+.color61 { @include css-gradient(rgba(123, 197, 127, 1), rgba(150, 200, 90, 1), rgba(166, 188, 67, 1), rgba(207, 162, 57, 1), 22%, 41%, 64%, 100% ); }
+.color62 { @include css-gradient(rgba(123, 198, 126, 1), rgba(153, 200, 88, 1), rgba(169, 188, 65, 1), rgba(209, 160, 54, 1), 20%, 40%, 65%, 100% ); }
+.color63 { @include css-gradient(rgba(123, 198, 126, 1), rgba(156, 201, 86, 1), rgba(172, 187, 63, 1), rgba(210, 159, 52, 1), 19%, 39%, 65%, 100% ); }
+.color64 { @include css-gradient(rgba(123, 198, 126, 1), rgba(158, 201, 86, 1), rgba(174, 187, 62, 1), rgba(212, 158, 50, 1), 19%, 39%, 65%, 100% ); }
+.color65 { @include css-gradient(rgba(123, 198, 126, 1), rgba(160, 201, 84, 1), rgba(176, 186, 61, 1), rgba(214, 157, 48, 1), 18%, 38%, 65%, 100% ); }
+.color66 { @include css-gradient(rgba(124, 199, 125, 1), rgba(162, 201, 82, 1), rgba(178, 185, 60, 1), rgba(216, 155, 46, 1), 18%, 38%, 65%, 100% ); }
+.color67 { @include css-gradient(rgba(124, 199, 125, 1), rgba(163, 201, 81, 1), rgba(179, 185, 58, 1), rgba(217, 153, 44, 1), 17%, 38%, 65%, 100% ); }
+.color68 { @include css-gradient(rgba(124, 200, 124, 1), rgba(165, 201, 79, 1), rgba(181, 184, 56, 1), rgba(218, 151, 41, 1), 17%, 37%, 66%, 100% ); }
+.color69 { @include css-gradient(rgba(125, 200, 123, 1), rgba(168, 201, 75, 1), rgba(186, 182, 52, 1), rgba(221, 148, 37, 1), 16%, 36%, 66%, 100% ); }
+.color70 { @include css-gradient(rgba(125, 200, 123, 1), rgba(168, 201, 75, 1), rgba(186, 182, 52, 1), rgba(221, 148, 37, 1), 16%, 36%, 66%, 100% ); }
+.color71 { @include css-gradient(rgba(125, 200, 123, 1), rgba(170, 201, 73, 1), rgba(188, 181, 50, 1), rgba(223, 146, 35, 1), 16%, 36%, 66%, 100% ); }
+.color72 { @include css-gradient(rgba(125, 200, 123, 1), rgba(172, 201, 71, 1), rgba(190, 180, 48, 1), rgba(223, 144, 33, 1), 15%, 35%, 66%, 100% ); }
+.color73 { @include css-gradient(rgba(125, 200, 123, 1), rgba(174, 201, 70, 1), rgba(192, 180, 46, 1), rgba(224, 143, 31, 1), 14%, 34%, 67%, 100% ); }
+.color74 { @include css-gradient(rgba(125, 200, 123, 1), rgba(176, 201, 68, 1), rgba(194, 180, 44, 1), rgba(224, 142, 30, 1), 13%, 33%, 68%, 100% ); }
+.color75 { @include css-gradient(rgba(126, 201, 122, 1), rgba(178, 201, 67, 1), rgba(196, 180, 42, 1), rgba(225, 140, 28, 1), 12%, 33%, 68%, 100% ); }
+.color76 { @include css-gradient(rgba(126, 201, 121, 1), rgba(180, 201, 65, 1), rgba(198, 179, 40, 1), rgba(227, 138, 26, 1), 11%, 33%, 68%, 100% ); }
+.color77 { @include css-gradient(rgba(126, 201, 120, 1), rgba(182, 201, 63, 1), rgba(200, 178, 38, 1), rgba(230, 134, 24, 1), 10%, 32%, 68%, 100% ); }
+.color78 { @include css-gradient(rgba(127, 202, 119, 1), rgba(184, 201, 61, 1), rgba(203, 177, 35, 1), rgba(232, 131, 22, 1), 10%, 32%, 68%, 100% ); }
+.color79 { @include css-gradient(rgba(127, 202, 118, 1), rgba(187, 202, 59, 1), rgba(206, 177, 32, 1), rgba(234, 127, 19, 1), 10%, 32%, 68%, 100% ); }
+.color80 { @include css-gradient(rgba(128, 202, 117, 1), rgba(189, 202, 57, 1), rgba(209, 177, 30, 1), rgba(235, 125, 17, 1), 10%, 32%, 68%, 100% ); }
+//BREAK POINT
+.color81 { @include css-gradient(rgba(128, 202, 117, 1), rgba(189, 202, 57, 1), rgba(209, 177, 30, 1), rgba(235, 125, 17, 1), 10%, 32%, 68%, 100% ); }
+.color82 { @include css-gradient(rgba(128, 202, 117, 1), rgba(189, 202, 57, 1), rgba(209, 177, 30, 1), rgba(235, 125, 17, 1), 10%, 32%, 68%, 100% ); }
+.color83 { @include css-gradient(rgba(127, 202, 119, 1), rgba(184, 201, 61, 1), rgba(203, 177, 35, 1), rgba(232, 131, 22, 1), 10%, 32%, 68%, 100% ); }
+.color84 { @include css-gradient(rgba(126, 201, 120, 1), rgba(182, 201, 63, 1), rgba(200, 178, 38, 1), rgba(230, 134, 24, 1), 10%, 32%, 68%, 100% ); }
+.color85 { @include css-gradient(rgba(126, 201, 121, 1), rgba(180, 201, 65, 1), rgba(198, 179, 40, 1), rgba(227, 138, 26, 1), 11%, 33%, 68%, 100% ); }
+.color86 { @include css-gradient(rgba(126, 201, 122, 1), rgba(178, 201, 67, 1), rgba(196, 180, 42, 1), rgba(225, 140, 28, 1), 12%, 33%, 68%, 100% ); }
+.color87 { @include css-gradient(rgba(125, 200, 123, 1), rgba(174, 201, 70, 1), rgba(192, 180, 46, 1), rgba(224, 143, 31, 1), 14%, 34%, 67%, 100% ); }
+.color88 { @include css-gradient(rgba(125, 200, 123, 1), rgba(172, 201, 71, 1), rgba(190, 180, 48, 1), rgba(223, 144, 33, 1), 15%, 35%, 66%, 100% ); }
+.color89 { @include css-gradient(rgba(125, 200, 123, 1), rgba(170, 201, 73, 1), rgba(188, 181, 50, 1), rgba(223, 146, 35, 1), 16%, 36%, 66%, 100% ); }
+.color90 { @include css-gradient(rgba(125, 200, 123, 1), rgba(168, 201, 75, 1), rgba(186, 182, 52, 1), rgba(221, 148, 37, 1), 16%, 36%, 66%, 100% ); }
+.color91 { @include css-gradient(rgba(125, 200, 123, 1), rgba(168, 201, 75, 1), rgba(186, 182, 52, 1), rgba(221, 148, 37, 1), 16%, 36%, 66%, 100% ); }
+.color92 { @include css-gradient(rgba(125, 200, 123, 1), rgba(168, 201, 75, 1), rgba(186, 182, 52, 1), rgba(221, 148, 37, 1), 16%, 36%, 66%, 100% ); }
+.color93 { @include css-gradient(rgba(124, 200, 124, 1), rgba(165, 201, 79, 1), rgba(181, 184, 56, 1), rgba(218, 151, 41, 1), 17%, 37%, 66%, 100% ); }
+.color94 { @include css-gradient(rgba(124, 199, 125, 1), rgba(163, 201, 81, 1), rgba(179, 185, 58, 1), rgba(217, 153, 44, 1), 17%, 38%, 65%, 100% ); }
+.color95 { @include css-gradient(rgba(124, 199, 125, 1), rgba(162, 201, 82, 1), rgba(178, 185, 60, 1), rgba(216, 155, 46, 1), 18%, 38%, 65%, 100% ); }
+.color96 { @include css-gradient(rgba(123, 198, 126, 1), rgba(160, 201, 84, 1), rgba(176, 186, 61, 1), rgba(214, 157, 48, 1), 18%, 38%, 65%, 100% ); }
+.color97 { @include css-gradient(rgba(123, 198, 126, 1), rgba(158, 201, 86, 1), rgba(174, 187, 62, 1), rgba(212, 158, 50, 1), 19%, 39%, 65%, 100% ); }
+.color98 { @include css-gradient(rgba(123, 198, 126, 1), rgba(156, 201, 86, 1), rgba(172, 187, 63, 1), rgba(210, 159, 52, 1), 19%, 39%, 65%, 100% ); }
+.color99 { @include css-gradient(rgba(123, 198, 126, 1), rgba(153, 200, 88, 1), rgba(169, 188, 65, 1), rgba(209, 160, 54, 1), 20%, 40%, 65%, 100% ); }
+.color100 { @include css-gradient(rgba(123, 197, 127, 1), rgba(150, 200, 90, 1), rgba(166, 188, 67, 1), rgba(207, 162, 57, 1), 22%, 41%, 64%, 100% ); }
+.color101 { @include css-gradient(rgba(123, 196, 127, 1), rgba(148, 200, 93, 1), rgba(164, 189, 69, 1), rgba(205, 164, 59, 1), 22%, 41%, 64%, 100% ); }
+.color102 { @include css-gradient(rgba(124, 197, 129, 1), rgba(144, 200, 95, 1), rgba(162, 189, 71, 1), rgba(203, 166, 60, 1), 22%, 41%, 64%, 100% ); }
+.color103 { @include css-gradient(rgba(124, 197, 131, 1), rgba(142, 200, 96, 1), rgba(161, 190, 73, 1), rgba(200, 168, 63, 1), 22%, 42%, 64%, 100% ); }
+.color104 { @include css-gradient(rgba(124, 198, 133, 1), rgba(140, 200, 98, 1), rgba(159, 190, 75, 1), rgba(197, 170, 64, 1), 20%, 43%, 64%, 100% ); }
+.color105 { @include css-gradient(rgba(124, 198, 134, 1), rgba(138, 200, 100, 1), rgba(157, 191, 77, 1), rgba(195, 172, 66, 1), 21%, 43%, 64%, 100% ); }
+.color106 { @include css-gradient(rgba(124, 199, 135, 1), rgba(136, 200, 100, 1), rgba(156, 191, 79, 1), rgba(193, 174, 68, 1), 21%, 43%, 64%, 100% ); }
+.color107 { @include css-gradient(rgba(125, 198, 137, 1), rgba(134, 200, 102, 1), rgba(156, 191, 81, 1), rgba(191, 176, 70, 1), 22%, 41%, 64%, 100% ); }
+.color108 { @include css-gradient(rgba(125, 198, 138, 1), rgba(132, 200, 104, 1), rgba(154, 192, 83, 1), rgba(188, 178, 72, 1), 22%, 41%, 64%, 100% ); }
+.color109 { @include css-gradient(rgba(126, 198, 140, 1), rgba(130, 200, 106, 1), rgba(152, 192, 85, 1), rgba(185, 181, 74, 1), 23%, 42%, 64%, 100% ); }
+.color110 { @include css-gradient(rgba(126, 198, 142, 1), rgba(130, 200, 108, 1), rgba(150, 192, 88, 1), rgba(182, 183, 76, 1), 23%, 43%, 64%, 100% ); }
+.color111 { @include css-gradient(rgba(126, 198, 144, 1), rgba(129, 200, 110, 1), rgba(147, 193, 90, 1), rgba(179, 185, 78, 1), 24%, 44%, 64%, 100% ); }
+.color112 { @include css-gradient(rgba(126, 199, 146, 1), rgba(127, 200, 112, 1), rgba(145, 194, 92, 1), rgba(176, 188, 80, 1), 24%, 44%, 64%, 100% ); }
+.color113 { @include css-gradient(rgba(126, 200, 148, 1), rgba(127, 200, 114, 1), rgba(142, 196, 94, 1), rgba(174, 190, 82, 1), 25%, 45%, 64%, 100% ); }
+.color114 { @include css-gradient(rgba(127, 201, 150, 1), rgba(127, 200, 115, 1), rgba(140, 197, 96, 1), rgba(172, 192, 84, 1), 25%, 45%, 64%, 100% ); }
+.color115 { @include css-gradient(rgba(127, 202, 152, 1), rgba(125, 200, 117, 1), rgba(138, 197, 97, 1), rgba(168, 196, 86, 1), 25%, 46%, 65%, 100% ); }
+.color116 { @include css-gradient(rgba(127, 203, 153, 1), rgba(122, 200, 119, 1), rgba(136, 196, 99, 1), rgba(163, 198, 88, 1), 25%, 46%, 66%, 100% ); }
+.color117 { @include css-gradient(rgba(128, 204, 154, 1), rgba(119, 208, 121, 1), rgba(134, 195, 101, 1), rgba(160, 200, 89, 1), 25%, 46%, 67%, 100% ); }
+.color118 { @include css-gradient(rgba(129, 204, 155, 1), rgba(116, 207, 123, 1), rgba(132, 194, 104, 1), rgba(157, 202, 90, 1), 25%, 47%, 68%, 100% ); }
+.color119 { @include css-gradient(rgba(130, 204, 156, 1), rgba(115, 206, 125, 1), rgba(130, 194, 106, 1), rgba(154, 204, 91, 1), 26%, 47%, 69%, 100% ); }
+.color120 { @include css-gradient(rgba(131, 204, 157, 1), rgba(114, 205, 127, 1), rgba(129, 194, 108, 1), rgba(151, 205, 90, 1), 26%, 47%, 70%, 100% ); }
+.color121 { @include css-gradient(rgba(130, 204, 158, 1), rgba(113, 204, 129, 1), rgba(128, 194, 109, 1), rgba(148, 204, 89, 1), 26%, 48%, 70%, 100% ); }
+.color122 { @include css-gradient(rgba(129, 204, 160, 1), rgba(112, 203, 129, 1), rgba(126, 193, 110, 1), rgba(146, 203, 89, 1), 26%, 48%, 71%, 100% ); }
+.color123 { @include css-gradient(rgba(128, 205, 161, 1), rgba(111, 202, 130, 1), rgba(124, 192, 111, 1), rgba(144, 202, 89, 1), 26%, 48%, 71%, 100% ); }
+.color124 { @include css-gradient(rgba(127, 205, 162, 1), rgba(110, 201, 132, 1), rgba(123, 192, 112, 1), rgba(142, 201, 89, 1), 26%, 49%, 71%, 100% ); }
+.color125 { @include css-gradient(rgba(127, 205, 163, 1), rgba(109, 200, 133, 1), rgba(122, 192, 112, 1), rgba(140, 200, 89, 1), 26%, 49%, 72%, 100% ); }
+.color126 { @include css-gradient(rgba(126, 205, 164, 1), rgba(108, 199, 134, 1), rgba(121, 191, 113, 1), rgba(138, 199, 90, 1), 26%, 49%, 73%, 100% ); }
+.color127 { @include css-gradient(rgba(126, 205, 165, 1), rgba(107, 198, 135, 1), rgba(120, 190, 114, 1), rgba(136, 198, 91, 1), 26%, 49%, 74%, 100% ); }
+.color128 { @include css-gradient(rgba(126, 205, 166, 1), rgba(106, 197, 136, 1), rgba(119, 189, 115, 1), rgba(135, 197, 93, 1), 26%, 49%, 74%, 100% ); }
+.color129 { @include css-gradient(rgba(126, 205, 167, 1), rgba(105, 196, 137, 1), rgba(118, 188, 116, 1), rgba(134, 196, 94, 1), 26%, 49%, 74%, 100% ); }
+.color130 { @include css-gradient(rgba(125, 205, 168, 1), rgba(104, 196, 137, 1), rgba(117, 188, 117, 1), rgba(132, 195, 96, 1), 25%, 50%, 74%, 100% ); }
+.color131 { @include css-gradient(rgba(124, 205, 169, 1), rgba(103, 196, 137, 1), rgba(116, 188, 118, 1), rgba(131, 193, 97, 1), 25%, 50%, 74%, 100% ); }
+.color132 { @include css-gradient(rgba(124, 205, 169, 1), rgba(103, 196, 137, 1), rgba(116, 188, 118, 1), rgba(131, 193, 97, 1), 25%, 50%, 74%, 100% ); }
+.color133 { @include css-gradient(rgba(123, 205, 170, 1), rgba(102, 196, 137, 1), rgba(115, 188, 119, 1), rgba(129, 193, 99, 1), 25%, 50%, 74%, 100% ); }
+.color134 { @include css-gradient(rgba(122, 205, 170, 1), rgba(101, 196, 138, 1), rgba(114, 188, 120, 1), rgba(129, 193, 100, 1), 26%, 50%, 74%, 100% ); }
+.color135 { @include css-gradient(rgba(121, 205, 170, 1), rgba(100, 196, 139, 1), rgba(113, 188, 121, 1), rgba(128, 193, 101, 1), 26%, 51%, 74%, 100% ); }
+.color136 { @include css-gradient(rgba(120, 205, 170, 1), rgba(100, 196, 140, 1), rgba(112, 188, 122, 1), rgba(127, 193, 103, 1), 26%, 51%, 74%, 100% ); }
+.color137 { @include css-gradient(rgba(120, 205, 170, 1), rgba(100, 196, 141, 1), rgba(111, 188, 123, 1), rgba(126, 193, 105, 1), 26%, 51%, 74%, 100% ); }
+.color138 { @include css-gradient(rgba(120, 205, 170, 1), rgba(100, 196, 142, 1), rgba(110, 188, 124, 1), rgba(126, 193, 107, 1), 26%, 51%, 74%, 100% ); }
+.color139 { @include css-gradient(rgba(120, 205, 170, 1), rgba(100, 196, 143, 1), rgba(110, 188, 125, 1), rgba(125, 193, 108, 1), 26%, 51%, 74%, 100% ); }
+.color140 { @include css-gradient(rgba(120, 205, 170, 1), rgba(100, 196, 144, 1), rgba(109, 188, 126, 1), rgba(124, 193, 109, 1), 26%, 51%, 74%, 100% ); }
+.color141 { @include css-gradient(rgba(119, 205, 171, 1), rgba(100, 196, 145, 1), rgba(108, 188, 127, 1), rgba(123, 193, 110, 1), 26%, 51%, 74%, 100% ); }
+.color142 { @include css-gradient(rgba(117, 205, 173, 1), rgba(98, 196, 147, 1), rgba(107, 188, 129, 1), rgba(121, 193, 112, 1), 25%, 51%, 74%, 100% ); }
+.color143 { @include css-gradient(rgba(116, 205, 174, 1), rgba(97, 196, 148, 1), rgba(106, 188, 130, 1), rgba(120, 193, 113, 1), 24%, 51%, 74%, 100% ); }
+.color144 { @include css-gradient(rgba(115, 205, 175, 1), rgba(96, 196, 149, 1), rgba(105, 188, 131, 1), rgba(119, 193, 115, 1), 24%, 51%, 74%, 100% ); }
+.color145 { @include css-gradient(rgba(115, 205, 176, 1), rgba(94, 196, 150, 1), rgba(105, 188, 132, 1), rgba(118, 193, 116, 1), 24%, 51%, 74%, 100% ); }
+.color146 { @include css-gradient(rgba(115, 205, 177, 1), rgba(93, 196, 151, 1), rgba(105, 189, 133, 1), rgba(117, 193, 117, 1), 23%, 51%, 73%, 100% ); }
+.color147 { @include css-gradient(rgba(115, 205, 178, 1), rgba(92, 196, 152, 1), rgba(104, 190, 134, 1), rgba(116, 193, 119, 1), 22%, 51%, 73%, 100% ); }
+.color148 { @include css-gradient(rgba(115, 205, 179, 1), rgba(92, 196, 153, 1), rgba(104, 191, 135, 1), rgba(115, 193, 121, 1), 20%, 50%, 73%, 100% ); }
+.color149 { @include css-gradient(rgba(115, 205, 180, 1), rgba(92, 196, 154, 1), rgba(104, 191, 136, 1), rgba(114, 193, 123, 1), 20%, 50%, 73%, 100% ); }
+.color150 { @include css-gradient(rgba(115, 205, 182, 1), rgba(92, 196, 155, 1), rgba(104, 191, 136, 1), rgba(113, 193, 125, 1), 20%, 51%, 74%, 100% ); }
+.color151 { @include css-gradient(rgba(115, 205, 183, 1), rgba(92, 196, 156, 1), rgba(104, 191, 137, 1), rgba(111, 193, 126, 1), 21%, 52%, 74%, 100% ); }
+.color152 { @include css-gradient(rgba(115, 205, 185, 1), rgba(92, 196, 156, 1), rgba(104, 191, 137, 1), rgba(111, 193, 126, 1), 21%, 52%, 74%, 100% ); }
+.color153 { @include css-gradient(rgba(115, 205, 186, 1), rgba(92, 196, 158, 1), rgba(104, 191, 138, 1), rgba(111, 193, 126, 1), 21%, 52%, 74%, 100% ); }
+.color154 { @include css-gradient(rgba(115, 205, 187, 1), rgba(92, 196, 160, 1), rgba(104, 191, 140, 1), rgba(110, 193, 127, 1), 22%, 54%, 75%, 100% ); }
+.color155 { @include css-gradient(rgba(115, 205, 189, 1), rgba(92, 196, 162, 1), rgba(104, 191, 140, 1), rgba(110, 193, 127, 1), 23%, 55%, 76%, 100% ); }
+.color156 { @include css-gradient(rgba(115, 205, 191, 1), rgba(92, 196, 164, 1), rgba(105, 191, 141, 1), rgba(109, 193, 129, 1), 23%, 56%, 77%, 100% ); }
+.color157 { @include css-gradient(rgba(115, 205, 193, 1), rgba(92, 196, 166, 1), rgba(105, 191, 143, 1), rgba(108, 193, 131, 1), 24%, 58%, 78%, 100% ); }
+.color158 { @include css-gradient(rgba(115, 205, 196, 1), rgba(92, 196, 169, 1), rgba(105, 191, 146, 1), rgba(106, 193, 133, 1), 24%, 60%, 80%, 100% ); }
+.color159 { @include css-gradient(rgba(115, 205, 199, 1), rgba(92, 196, 173, 1), rgba(105, 191, 148, 1), rgba(104, 193, 135, 1), 25%, 62%, 82%, 100% ); }
+.color160 { @include css-gradient(rgba(115, 205, 202, 1), rgba(92, 196, 176, 1), rgba(105, 191, 150, 1), rgba(102, 193, 137, 1), 25%, 64%, 84%, 100% ); }
+
+//General Styling
+
+section#content_wrap {width: 95%; margin: 0 auto;}
+//TAG CLOUD
+#tag_cloud{
+	width: 1020px;
+	margin: 0 auto;
+	text-align: center;
+	line-height: 1.6em;
+}
+
+//footer
+footer#main {width: 100%; background: rgba(255,255,255,0.85); position: fixed; height: 40px; bottom: 0;}
+section.footer_wrap {width: 1060px; margin: 0 auto; padding: 0px;
+a { line-height: 20px; color: #48B584; font-family: "quicksandbold", helvetica;
+
+  }
+}
+section.footer_wrap a img {padding-right: 5px;  }
+a.text_link {vertical-align: top;}
+section.footer_wrap a:link {display: inline-block; line-height: 20px; vertical-align: middle;}
+.left_column {float: left; width: 300px;}
+.right_column {float: right; width: 100px;}
+section.footer_wrap .right_column a.kickstart {padding: 4px;  -moz-border-radius: 4px 4px 4px 4px;
+            border-radius: 4px 4px 4px 4px ; color: #fff; background: #EC8C45; margin-top: 5px;}
+
+// FORM
+
+.select2-container, .select2-drop, .select2-search, .select2-search input { width: 550px; background: none; border-bottom: 1px solid rgab(255,255,255,0.2);  }
+section#content_wrap .select2-container .select2-choice div {display: none;}
+section#content_wrap #select2-drop, section#content_wrap .select2-drop, section#content_wrap .select2-drop-active {background: rgba(255,255,255,0.2); }
+
+
+section#content_wrap .select2-search input {padding: 10px 5px;}
+.select2-drop {text-align: left;}
+#section#content_wrap .select2-drop {color: #ddd;}
+div#select2-drop-mask.select2-drop-mask {color: #777;}
+
+select#post_tag_list {width: 550px; background: rgba(255,255,255,0.5); border: none;}
+select#post_tag_list .select2-container a.select2-choice {border: none; padding: 10px; @include box-shadow($formshadows);
+}
+//FORMS WITH FONTS
+
+//ADD NEW INPUT
+input#post_new_post {background-image: none; background: rgba(255,255,255,0.08); border: none; @include box-shadow($formshadows); color: #fff; padding: 12px 10px; width: 530px; -webkit-border-radius:6px;
+       -moz-border-radius:6px;
+            border-radius:6px; font-family: "quicksandbook", helvetica; text-shadow: 0px -1px 1px rgba(0, 0, 0, 0.3); font-size: 1em;
+}
+// Post Button
+p.post, p.add_post {width: 50px; display: none; color: #fff; position: absolute; right: -70px; top: -2px; }
+p.post input, p.add_post input {background: rgba(255,255,255,0.1); border: none; color: #fff; color: #fff; font-size: .9em; padding: 13px 25px; @include box-shadow($formshadows); text-shadow: 0px -1px 1px rgba(0, 0, 0, 0.3); font-family: "quicksandbold", helvetica; -webkit-border-radius: 4px 4px 4px 4px;
+       -moz-border-radius: 4px 4px 4px 4px;
+            border-radius: 4px 4px 4px 4px ;}
+p.post input:hover, p.add_post input:hover {cursor: pointer;}
+
+p.post.select_on, p.add_post.selected_on {display: inline-block;}
+
+
+
+#new_form.getup {display: block;}
+
+#new_form input#post_new_post.hide {display:none;}
+
+//ADD NEW FIELD
+#add_new { margin-top:70px; text-align: left; font-size: .9em; font-family: "quicksandbold", helvetica; text-shadow: 0px -1px 1px rgba(0, 0, 0, 0.3); z-index: 1000; margin-top: 20px; }
+#add_new:hover {cursor: pointer;}
+#add_new.active {margin-top: 20px; height:15px;}
+#add_new.active.slim, #add_new.active.slim p {margin-top: 20px; z-index: 9999; display: block;}
+#add_new.active p {display:none;}
+
+.tester {margin-top: 100px;}
+
+form#new_post { width: 550px; margin: 10px auto; position: relative;}
+#new_form {display: none; margin-top: 15px; }
+#new_form.slow {display: block; margin-top: 15px; z-index: 99; position: absolute;}
+
+//BUBBLE MOVEMENT BASED ON COLOR BG
+
+//1
+@-webkit-keyframes movebubbles1 {
+    0% {-webkit-transform: translateY(0px);} 
+    100% {-webkit-transform: translateY(2px);}
+}
+
+@-moz-keyframes movebubbles1  {
+    0% { -webkit-transform: translateY(0px);} 
+    100% {-webkit-transform: translateY(2px);}
+}
+
+@-o-keyframes movebubbles1  {
+    0% {-webkit-transform: translateY(0px);} 
+    100% {-webkit-transform: translateY(2px);}
+}
+
+@keyframes movebubbles1  
+{
+    0% {-webkit-transform: translateY(0px);} 
+    100% {-webkit-transform: translateY(2px);}
+}
+
+//2 
+@-webkit-keyframes movebubbles2 {
+     0% {-webkit-transform: translateY(10px);} 
+    100% {-webkit-transform: translateY(8px);}
+}
+
+@-moz-keyframes movebubbles2  {
+    0% {
+        -webkit-transform: translateY(10px);
+    } 
+    100% {
+        -webkit-transform: translateY(8px);
+    }
+}
+
+@-o-keyframes movebubbles2  {
+    0% {
+        -webkit-transform: translateY(10px);
+    } 
+    100% {
+        -webkit-transform: translateY(8px);
+    }
+}
+
+@keyframes movebubbles2  
+{
+    0% {
+        -webkit-transform: translateY(10px);
+    } 
+    100% {
+        -webkit-transform: translateY(9px);
+    }
+}
+
+//3 
+
+@-webkit-keyframes movebubbles3 {
+     0% {
+        -webkit-transform: translateY(100px);
+    } 
+    100% {
+        -webkit-transform: translateY(95px);
+    }
+}
+
+@-moz-keyframes movebubbles3  {
+    0% {
+        -webkit-transform: translateY(100px);
+    } 
+    100% {
+        -webkit-transform: translateY(95px);
+    }
+}
+
+@-o-keyframes movebubbles3  {
+    0% {
+        -webkit-transform: translateY(100px);
+    } 
+    100% {
+        -webkit-transform: translateY(95px);
+    }
+}
+
+@keyframes movebubbles3  
+{
+    0% {
+        -webkit-transform: translateY(100px);
+    } 
+    100% {
+        -webkit-transform: translateY(95px);
+    }
+}
+
+//4
+@-webkit-keyframes movebubbles4 {
+    0% {-webkit-transform: translateY(60px);} 
+    100% {-webkit-transform: translateY(70px);}
+}
+
+@-moz-keyframes movebubbles4  {
+    0% { -webkit-transform: translateY(60px);} 
+    100% {-webkit-transform: translateY(70px);}
+}
+
+@-o-keyframes movebubbles4  {
+    0% {-webkit-transform: translateY(60px);} 
+    100% {-webkit-transform: translateY(70px);}
+}
+
+@keyframes movebubbles4  {
+    0% {-webkit-transform: translateY(60px);} 
+    100% {-webkit-transform: translateY(70px);}
+}
+
+//5
+@-webkit-keyframes movebubbles4 {
+    0% {-webkit-transform: translateY(80px);} 
+    100% {-webkit-transform: translateY(95px);}
+}
+
+@-moz-keyframes movebubbles4  {
+    0% { -webkit-transform: translateY(80px);} 
+    100% {-webkit-transform: translateY(95px);}
+}
+
+@-o-keyframes movebubbles4  {
+    0% {-webkit-transform: translateY(80px);} 
+    100% {-webkit-transform: translateY(95px);}
+}
+
+@keyframes movebubbles4  {
+    0% {-webkit-transform: translateY(80px);} 
+    100% {-webkit-transform: translateY(95px);}
+}
+
+// BUBBLE EVENTS
+
+.tag_name { font-size: 12px; font-family: "quicksandbold", helvetica, arial, san-serif; background: rgba(0,0,0,.35); text-transform: lowercase; padding: 8px 10px; border-radius: 6px; top: -15px; right: 10px; z-index:100; position: absolute; float: left; width: 130px; line-height: 1em;}
+
+/*.tag_name {display: none;}
+.tag_name.display {display: block;}*/
+
+// BUBBLE HOVERS!!!!!
+#tag_cloud {
+  width: 1020px;
+  margin: 0 auto;
+    color: #f3f3f3;
+    text-transform: uppercase;
+    overflow:visible !important;
+      text-align: center;
+
+    .item_wrap {float: left; }
+    .item { background: rgba(255,255,255,.5); border-radius: 50%; color: rgba(255,255,255,.01); font-family: "quicksandbold"; display:table; padding: 3px;}
+    .item p {display:table-cell; vertical-align: middle;}
+
+  .w1, .w1 p { font-size: 4px; width:5px; height:5px; float: left; }
+
+  .w2, .w2 p { font-size: 4px; width:15px; height:15px; float: left;  }
+
+  .w3, .w3 p { font-size: 4px; line-height:1em; width:5px; height:5px;  float: left;}
+
+    .w4, .w4 p { font-size: 6px; line-height:1em; width:10px; height:10px;  float: left;}
+
+    .w5, .w5 p { font-size: 6px; line-height:1em; width:15px; height:15px; float: left;}
+
+    .w6, .w6 p { font-size: 6px; line-height:1em; width:20px; height:20px; float: left;}
+
+    .w7, .w7 p { font-size: 6px; line-height:1em; width:25px; height:25px; float: left; }
+
+    .w8, .w8 p { font-size: 6px; line-height:1em; width:30px; height:30px;  float: left;}
+
+    .w9, .w9 p { font-size: 6px; line-height:1em; width:35px; height:35px; }
+
+    .w10, .w10 p { font-size: 7px; line-height:1em; width:40px; height:40px; }
+
+    .w11, .w11 p { font-size: 7px; line-height:1em; width:45px; height:45px;}
+
+    .w12, .w12 p { font-size: 7px; line-height:1em; width:50px; height:50px; }
+
+    .w13 { font-size: 7px; line-height:1em; width:55px; height:55px; }
+
+    .w14 { font-size: 8px; line-height:1em; width:60px; height:60px; }
+
+    .w15 { font-size: 8px; line-height:1em; width:70px; height:70px; }
+
+    .w16 { font-size: 8px; line-height:1em; width:80px; height:80px; }
+
+    .w17 { font-size: 10px; line-height:1em; width:100px; height:100px;}
+
+    .w18 { font-size: 14px; line-height:1em; width:150px; height:150px; }
+
+    .w19 { font-size: 14px; line-height:1em; width:200px; height:200px; }
+
+    .w20 { font-size: 16px; line-height:1em; width:250px; height:250px; position:relative; }
+
+
+    .item.newly_created {width: 5px; height: 5px; margin: 45px 15px 8px 10px; padding: 0;}
+
+     .w3:hover, .w4:hover, .w5:hover, .w6:hover, .w7:hover, .w8:hover, .w9:hover, .w10:hover, .w11:hover, .w12:hover, .w13:hover, .w14:hover, .w15:hover, .w16:hover, .w17:hover, .w18:hover, .w19:hover, .w20:hover {
+    background: #fff;
+    -webkit-transition: 500ms ease-in;
+    -moz-transition: 500ms ease-in;
+    -ms-transition: 500ms ease-in;
+    -o-transition: 500ms ease-in;
+    transition: background 500ms ease-in;
+    text-align: center;
+    color: #ccc;
+    }
+}
+
+ .item_wrap:nth-child(1n+1) {
+  top: 0px !important;
+  -webkit-animation: movebubbles1 1s infinite alternate;
+  -moz-animation:    movebubbles1 1s infinite alternate;
+  -o-animation:      movebubbles1 1s infinite alternate;
+  animation:         movebubbles1 1s infinite alternate;
+}
+
+ .item_wrap:nth-child(2n+2) {
+  top: 10px !important;
+-webkit-animation: movebubbles2 1s infinite alternate;
+  -moz-animation:    movebubbles2 50s infinite alternate;
+  -o-animation:      movebubbles2 50s infinite alternate;
+  animation:         movebubbles2 50s infinite alternate;
+
+}
+
+ .item_wrap:nth-child(3n+3) {
+  top: 100px !important;
+  -webkit-animation: movebubbles3 10s infinite alternate;
+  -moz-animation:    movebubbles3 10s infinite alternate;
+  -o-animation:      movebubbles3 10s infinite alternate;
+  animation:         movebubbles3 10s infinite alternate;
+}
+
+ .item_wrap:nth-child(4n+4) {
+  top: 60px !important;
+  -webkit-animation: movebubbles4 10s infinite alternate;
+  -moz-animation:    movebubbles4 10s infinite alternate;
+  -o-animation:      movebubbles4 10s infinite alternate;
+  animation:         movebubbles4 10s infinite alternate;
+}
+
+.item_wrap:nth-child(5n+2) {
+  top: 80px !important;
+  -webkit-animation: movebubbles4 50s infinite alternate;
+  -moz-animation:    movebubbles4 50s infinite alternate;
+  -o-animation:      movebubbles4 50s infinite alternate;
+  animation:         movebubbles4 50s infinite alternate;
+}
+
+
+#tag_cloud .item_wrap:nth-child(2n+2) .newly_created { width: 8px; height: 8px; margin-left: 30px; }
+#tag_cloud .item_wrap:nth-child(3n+3) .newly_created { width: 3px; height: 3px; margin-right: 10px }
+
+#tag_cloud .item_wrap:nth-child(2n+2) .w20, #tag_cloud .item_wrap:nth-child(2n+2) .w10, #tag_cloud .item_wrap:nth-child(2n+2) .w5, #tag_cloud .item_wrap:nth-child(2n+2) .w2 { margin-top: 25px; }
+
+
+//footer
+footer#main {width: 100%; background: rgba(255,255,255,0.85); position: fixed; height: 50px; bottom: 0;}
+section.footer_wrap {width: 1060px; margin: 0 auto; padding: 5px 0; position: relative; height: 40px;
+a { line-height: 20px; color: #48B584; font-family: "quicksandbold", helvetica;
+
+  }
+}
+section.footer_wrap a img {padding-right: 5px;  }
+a.text_link {vertical-align: top;}
+section.footer_wrap a:link {display: inline-block; line-height: 20px; vertical-align: middle;}
+.left_column {float: left; width: 350px;}
+.right_column {float: right; width: 100px;}
+section.footer_wrap .right_column a.kickstart {padding: 8px 16px 6px 16px;  -moz-border-radius: 4px 4px 4px 4px;
+            border-radius: 4px 4px 4px 4px ; color: #fff; background: #dccb0d; border-bottom: 3px solid #bcae0d; margin-top: 2px; text-shadow: 0px -1px 1px rgba(0, 0, 0, 0.2); letter-spacing: .065em; font-size: 18px;}
+
+
+p.meet {display: inline-block; vertical-align: top; line-height: 40px; padding-left: 3px; color: #48B584; font-family: "quicksandbold", helvetica;}
+
+p#links.meet { padding-left: 20px;}
+
+p.kick_link {position: absolute; bottom: 20px; right: 25px; }
+
+#meet_mellon {width: 150px; display: inline-block;}
+p.kick_link a {background: #48B584; color: #fff; padding: 6px; font-family: "quicksandbold", helvetica; border-radius: 4px;}
+
+#get_social { width: 120px; display:none; position: absolute; bottom: 0; left: 320px;
+ul { list-style: none;
+  li { display: inline-block; width: 45px; }
+  }
+}
+
+ #get_social.up {display: block; }
+
+//Modal Box 
+#overlay {
+    background: rgba(119, 205, 171, 0.8);
+    position:fixed;
+    top:0px;
+    bottom:0px;
+    left:0px;
+    right:0px;
+    z-index:100;
+    border: 10px solid #fff;
+  }
+
+  #content {
+    position:fixed;
+    top:-200px;
+    left:15%;
+    right:15%;
+    background-color: #fff;
+    color:#7F7F7F;
+    padding:15px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius:5px;
+    -khtml-border-radius:5px;
+    z-index:101;
+    width: 760px;
+
+}
+
+
+
+
+section.content_wrap {width: 750px; color: #000;}
+
+.mellon_image {float: left; width: 500px; height: 290px;}
+.mellon_image img {max-width: 100%; width: 100%;}
+.summary {float: left; width: 230px; margin-left: 20px; height: 290px; color: #000;}
+h3.intro {font-family: "quicksandbold", helvetica; margin-top: 30px;}
+p.question {margin-top: 80px; font-family: "quicksandbold", helvetica; font-size: 0.9em; color: #6D6E71;   }
+
+p.question span {font-family: "quicksandbook", helvetica; font-size: 1.36em; color: #EC8C45; margin-bottom: 15px; display: block; }
+//.item_wrap {position: relative; }
+
+//content swapper
+.slide_wrap {height: 300px;}
+section.slide {position: absolute;}
+
+//nav 
+#social_container {float: left; width: 230px; margin-left: 20px;}
+#nav_container {width: 500px; display: block; float: left; height: 17px;}
+nav.slide_thumbs { width: 86px; margin: 0 auto; padding-bottom: 8px;
+ul { list-style: none; 
+  li { display: inline-block; width: 15px; height: 15px; margin: 0 5px; background: #fff;
+    } 
+  }
+}
+
+nav.slide_thumbs ul li a {display: inline-block; width: 15px; height: 15px; background: #48B584; border-radius: 15px; }
+nav.slide_thumbs ul li a.active {background: #EC8C45;}
+
+p.notice {position:absolute; text-indent: -9999px;}
+
+
+//Styles for new instance dot
+
+@-webkit-keyframes new {
+  from { width: 10px; height:10px; }
+   to   { width: 30px; height: 30px; }
+}
+
+@-moz-keyframes new  {
+  from { width: 10px; height:10px; }
+   to   { width: 30px; height: 30px; }
+}
+
+@-o-keyframes new  {
+   from { width: 10px; height:10px; }
+   to   { width: 30px; height: 30px; }
+   }
+
+@keyframes new  {
+  from { width: 10px; height:10px; }
+   to   { width: 30px; height: 30px; }
+}
+
+
+#tag_cloud .item_wrap .item.brandnew { 
+  -moz-box-shadow: 0 0 25px rgba(0,0,0,.5);
+-webkit-box-shadow: 0 0 25px rgba(0,0,0,.5);
+        box-shadow: 0 0 25px rgba(0,0,0,.5);
+-webkit-animation: new 1s ease 1s 2 alternate;
+  -moz-animation:  new 1s ease 1s 2 alternate;
+  -o-animation:    new 1s ease 1s 2 alternate;
+  animation:       new 1s ease 1s 2 alternate;
+}
+
+#tag_cloud .item_wrap .item.newly_created.brandnew {
+    opacity: 1 !important;
+}
+
+//.item_wrap {position: relative; }

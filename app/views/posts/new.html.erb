@@ -1,0 +1,113 @@
+
+<section id="content_wrap">
+
+	<header id="melon"><img src="/assets/logo.png"> </header>
+
+<section class="main_wrap">
+<h2 class="question"> I concentrate best while </h2>
+
+		<%= render 'form' %>
+<div style="clear:both"></div>
+</section>
+
+<div id="tag_cloud">
+		
+<% tag_cloud Post.tag_counts, %w[w1 w2 w3 w4 w5 w6 w7 w8 w9 w10 w11 w12 w13 w14 w15 w16 w17 w18 w19 w20] do |tag, css_class| %>
+<div class="item_wrap">
+		<span class="tag_name"> <%= Post.tagged_with(tag).count - 1 %> other people agree </span>
+		<div class="<%= "item #{css_class}" %> ">
+			<%= content_tag :p, tag.name %>
+		</div>
+
+</div>
+		<% end %>
+	<% if Obscenity.profane?(@new_post) %>
+		<!-- <div class="no-bad"><p>Let's keep it positive!</p></div> -->
+	<% else %>
+		<% @posts.each do |post| %>
+			<% if post.new_post %>
+
+				<div class="item_wrap">
+					<div class="item newly_created">
+					<span class="tag_name"> <%=post.new_post %></span>
+					</div>
+				</div>
+			<% else %>
+			<% end %>
+	<%end %>
+
+<% end %>
+
+<!-- 	<p class="notice"><%= notice %></p> -->
+
+</div>
+
+</section>
+
+
+<div id="overlay" style="display:none;">
+<div id="content">
+
+<div class="content_frame">
+<div class="slide_wrap">
+	<section id="one" class="slide">
+<div class="mellon_image"> <img src="/assets/headband.png"></div>
+<div class="summary">
+	<p class="question"> <span>The Melon Headband</span>  Making the invisible activity of your brain visible and understandable.  </p>
+
+</div>
+	</section><!--Close slide 1 -->
+		<section id="two" class="slide">
+<div class="mellon_image"> <img src="/assets/heroshot.png"></div>
+<div class="summary">
+	<p class="question"> <span> Find Your Focus </span> Melon is designed to enhance the things you do in your day-to-day life. </p>
+	
+</div>
+	</section><!--Close slide 2 -->
+				<section id="three" class="slide">
+<div class="mellon_image"> <img src="/assets/rundown.png"></div>
+<div class="summary">
+	<p class="question"> <span> Stay on Track </span> Melon tracks your focus during your important tasks and allows you to understand what helps you focus and how to focus better. </p>
+	
+</div>
+	</section><!--Close slide 3 -->
+		
+</div> <!--Close slide_wrap -->
+</div> <!--Close frame -->
+<div id="nav_container">
+<nav class="slide_thumbs"> 
+<ul>
+	<li> <a href="#one"></a></li>
+	<li> <a href="#two"></a></li>
+	<li> <a href="#three"></a> </li>
+</ul>
+</nav>
+</div>
+<div id="social_container"> <p class="kick_link"> <a href="http://www.kickstarter.com/projects/806146824/441921528?token=1b19ba14">Kickstarter </a> </p></div>
+
+ <a class="close_overlay"></a>
+
+</div>
+</div>
+
+<footer id="main">
+<section class="footer_wrap">
+<div class="left_column">
+	<div id="meet_mellon">
+<img src="/assets/phone_icon.png"> <p class="meet"> Meet Melon </p> 
+</div>
+<p id="links" class="meet"> Share This Page </p>
+<div id="get_social"> 
+	<ul>
+		<li> <a href="https://twitter.com/share?url=http://www.usemelon.com" onclick="window.open(this.href);return false;"><img src="/assets/twitter.png"></a> </li>
+		<li> <a target="_blank" href="http://www.facebook.com/sharer/sharer.php?u=http://www.usemelon.com"><img src="/assets/facebook.png"></a></li>
+	</ul>
+ </div>
+</div>
+<div class="right_column">
+	<a href="http://www.kickstarter.com" class="kickstart"> Kickstarter </a>
+</div>
+
+
+</section>
+ </footer>

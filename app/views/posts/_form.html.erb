@@ -1,0 +1,25 @@
+<body>
+	<div class="form">	
+
+		<%= form_for([@post]) do |f| %>
+		<%= f.select(:tag_list, ['','Studying', 
+			'Chewing gum', 'Running', 'Writing emails', 'Watching cartoons', 'Doodling', 'It’s the winter', 'Doing yoga', 'It’s late at night', 'It’s spring', 'Listening to music', 'At Starbucks', 'Coding', 'Reading', 'Painting', 'So much caffeine...', 'Feeling inspired', 'Meditating', 'Exercising', 'With friends', 'It’s fall', 'Drinking coffee', 'It’s sunny', 'Working in bed', 'Dancing', 'Working on a deadline', 'It’s totally silent', 'It’s early in the morning', 'Happy', 'Standing on one foot', 'Taking standardized tests', 'It’s the summer', 'Using headphones', 'It’s raining', 'Golfing', 'Shooting free throws', 'Eating', 'It’s the afternoon', 'At work', 'Chopping wood' ], {}, { :class => 'my_style_class' }) %>
+		<p class="post">
+		<%= f.submit "Add" %>
+	</p>
+		<% end %>
+
+<div id="add_new"> <p><span> </span> Create New</p> </div>
+		<%= form_for([@post]) do |f| %>
+		 
+			<div id="new_form">
+		 <%= f.text_field :new_post, :placeholder => "Your Answer " %>
+		</div>
+		
+		<p class="add_post">
+		<%= f.submit "Add" %>
+	</p>
+		<% end %>
+
+	</div>
+</body>
