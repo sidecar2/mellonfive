@@ -57,7 +57,10 @@ $('#links').click(function(){
 
 if ( $("p.notice").is(":visible") ) {
   $(".item.newly_created:last").addClass("brandnew");
+  $(".item_wrap.personal_entry").addClass("new_entry");
  }
+
+
 
 
 
