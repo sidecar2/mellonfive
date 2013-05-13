@@ -44,6 +44,7 @@
 /* adding images */
 
 #add_new span { background: url('/assets/addnew.png') no-repeat; }
+.my_style_class.select2-container .select2-choice span {background: url('/assets/inset.png') no-repeat 100% 10px;}
 .my_style_class.select2-container .select2-choice span.dim {background: url('/assets/inset.png') no-repeat 100% -20px; }
 #add_new.active.slim.open span, #add_new.open span {background: url('/assets/addnew.png') no-repeat 0 -13px;}
 #add_new span { background: url("/assets/addnew.png") no-repeat; padding-right: 16px; }
