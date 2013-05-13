@@ -470,8 +470,10 @@ form#new_post { width: 550px; margin: 10px auto; position: relative;}
 
 // BUBBLE EVENTS
 
-.tag_name { font-size: 12px; font-family: "quicksandbold", helvetica, arial, san-serif; background: rgba(0,0,0,.35); text-transform: lowercase; padding: 8px 10px; border-radius: 6px; top: -25px; left: 7%; z-index:100; position: absolute; float: left; width: 130px; line-height: 1em;}
-
+.tag_name { font-size: 12px; font-family: "quicksandbold", helvetica, arial, san-serif; text-transform: lowercase; padding: 0; border-radius: 6px; top: -45px; z-index:100; position: absolute; float: left; width: 100%; min-width: 60px; text-align: center; line-height: 1em;}
+.tag_name p {background: rgba(0,0,0,.45); padding: 8px 12px; color: #fff; -webkit-border-radius: 4px;
+       -moz-border-radius: 4px;
+            border-radius: 4px; }
 /*.tag_name {display: none;}
 .tag_name.display {display: block;}*/
 
@@ -735,7 +737,7 @@ section.main_wrap {width: 700px;}
  .form {width: 700px; margin: 5px; }
  .select2-container, .select2-drop, .select2-search, .select2-search input {width: 500px;}
 input#post_new_post {width: 476px;}
-ul.select2-results .select2-results li {width: 160px;}
+.select2-results li {width: 160px;}
 }
 
 @media screen and (max-width: 760px) {
@@ -764,7 +766,10 @@ section.main_wrap {width: 320px;}
 
  .form {width: 420px; margin: 5px;}
 ul.select2-results .select2-results li {width: 160px;}
-
+  section#content_wrap {margin: 100px auto;}
+footer#main {top: 0; }
+.right_column, .left_column {float: none;  }
+.right_column {margin-top: 10px;}
 }
 
 @media screen and (max-width: 430px) {
@@ -779,6 +784,10 @@ form#new_post, #new_form {width: 300px; }
 
 .form {width: 320px; margin: 5px;}
 ul.select2-results .select2-results li {width: 160px;}
+footer#main {top: 0; }
+.right_column, .left_column {float: none;  }
+section#content_wrap {margin: 100px auto;}
+.right_column {margin-top: 10px;}
 }
 
 
@@ -794,6 +803,9 @@ form#new_post, #new_form {width: 280px;}
 input#post_new_post {width: 256px;} 
   .form {width: 300px; margin: 5px;}
   .select2-results li {width: 160px;}
-
+  section#content_wrap {margin: 100px auto;}
+footer#main {top: 0; }
+.right_column, .left_column {float: none;  }
+.right_column {margin-top: 10px;}
 }
 
