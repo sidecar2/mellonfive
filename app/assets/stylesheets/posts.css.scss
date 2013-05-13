@@ -749,6 +749,7 @@ section.main_wrap {width: 700px;}
  .select2-container, .select2-drop, .select2-search, .select2-search input {width: 500px;}
 input#post_new_post {width: 476px;}
 .select2-results li {width: 160px;}
+#copy {width: 700px;}
 }
 
 @media screen and (max-width: 760px) {
@@ -763,7 +764,7 @@ section.main_wrap {width: 500px;}
  input#post_new_post {width: 476px;}
  form#new_post .select2-container {display: block}
 ul.select2-results .select2-results li {width: 160px;}
-
+#copy {width: 500px;}
 }
 
 @media screen and (max-width: 560px) {
@@ -775,7 +776,7 @@ section.main_wrap {width: 320px;}
  form#new_post .select2-container {display: block}
  .select2-container, .select2-drop, .select2-search, .select2-search input {width: 280px;}
  input#post_new_post {width: 196px;}
-
+#copy {width: 320px;}
  .form {width: 360px; margin: 5px;}
 ul.select2-results .select2-results li {width: 160px;}
   section#content_wrap {margin: 100px auto 0 auto;}
@@ -807,7 +808,7 @@ section.main_wrap {width: 320px;}
 form#new_post, #new_form {width: 300px; }
  .select2-container, .select2-drop, .select2-search, .select2-search input {width: 300px;}
  input#post_new_post {width: 276px;}
-
+#copy {width: 320px;}
 .form {width: 320px; margin: 5px;}
 ul.select2-results .select2-results li {width: 160px;}
 footer#main {top: 0; }
@@ -839,6 +840,7 @@ footer#main {top: 0; }
    body, html {height: auto; min-height: 1200px;}
   header#melon {width: 300px;}
 section.footer_wrap {width: 300px;}
+#copy {width: 300px;}
 section.main_wrap {width: 300px;}
 form#new_post, #new_form {width: 280px;}
 .select2-container, .select2-drop, .select2-search, .select2-search input  { width: 280px; }
