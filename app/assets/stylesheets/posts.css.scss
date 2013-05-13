@@ -471,7 +471,7 @@ form#new_post { width: 550px; margin: 10px auto; position: relative;}
 // BUBBLE EVENTS
 
 .tag_name { font-size: 12px; font-family: "quicksandbold", helvetica, arial, san-serif; text-transform: lowercase; padding: 0; border-radius: 6px; top: -45px; z-index:100; position: absolute; float: left; width: 100%; min-width: 60px; text-align: center; line-height: 1em;}
-.tag_name p {background: rgba(0,0,0,.45); padding: 8px 12px; color: #fff; -webkit-border-radius: 4px;
+.tag_name p {background: rgba(0,0,0,.65); padding: 8px 12px; color: #fff; -webkit-border-radius: 4px; width: 150px; margin: 0 auto;
        -moz-border-radius: 4px;
             border-radius: 4px; }
 /*.tag_name {display: none;}
@@ -616,9 +616,10 @@ p#links.meet { padding-left: 20px;}
 p.kick_link {position: absolute; bottom: 20px; right: 25px; }
 
 #meet_mellon {width: 150px; display: inline-block;}
+#meet_mellon:hover {cursor: pointer; opacity: 0.7;}
 p.kick_link a {background: #48B584; color: #fff; padding: 6px; font-family: "quicksandbold", helvetica; border-radius: 4px;}
 
-#get_social { width: 120px; display:none; position: absolute; bottom: 0; left: 320px;
+#get_social { width: 120px; display:block; position: absolute; bottom: 5px; left: 235px;
 ul { list-style: none;
   li { display: inline-block; width: 45px; }
   }

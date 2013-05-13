@@ -10,8 +10,21 @@
 <div style="clear:both"></div>
 </section>
 
+
+
+
+</div>
+
 <div id="tag_cloud">
-		
+		 
+			<div class="item_wrap personal_entry">
+<% @newtags.each do |newtag| %>
+			
+			<div class="item w16"> <%= newtag.tag_list%> </div>
+			<span class="tag_name"> <p>   Your Entry <p> </span>
+<% end %>
+		</div>
+
 <% tag_cloud Post.tag_counts, %w[w1 w2 w3 w4 w5 w6 w7 w8 w9 w10 w11 w12 w13 w14 w15 w16 w17 w18 w19 w20] do |tag, css_class| %>
 <div class="item_wrap">
 		<span class="tag_name"> <p> <%= Post.tagged_with(tag).count - 1 %> other people agree </p> </span>
@@ -21,6 +34,8 @@
 
 </div>
 		<% end %>
+
+
 	<% if Obscenity.profane?(@new_post) %>
 		<!-- <div class="no-bad"><p>Let's keep it positive!</p></div> -->
 	<% else %>
@@ -38,7 +53,7 @@
 
 <% end %>
 
-<!-- 	<p class="notice"><%= notice %></p> -->
+	
 
 </div>
 
@@ -96,7 +111,7 @@
 	<div id="meet_mellon">
 <img src="/assets/phone_icon.png"> <p class="meet"> Meet Melon </p> 
 </div>
-<p id="links" class="meet"> Share This Page </p>
+<p id="links" class="meet"> Share</p>
 <div id="get_social"> 
 	<ul>
 		<li> <a href="https://twitter.com/share?url=http://www.usemelon.com" onclick="window.open(this.href);return false;"><img src="/assets/twitter.png"></a> </li>
@@ -105,7 +120,7 @@
  </div>
 </div>
 <div class="right_column">
-	<a href="http://www.kickstarter.com" class="kickstart"> Kickstarter </a>
+	<a href="http://www.kickstarter.com/projects/806146824/441921528?token=1b19ba14" class="kickstart"> Kickstarter </a>
 </div>
 
 

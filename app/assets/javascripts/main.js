@@ -55,6 +55,10 @@ $('#links').click(function(){
         $(this).toggleClass('uppety');
     });
 
+if ( $("p.notice").is(":visible") ) {
+  $(".item.newly_created:last").addClass("brandnew");
+ }
+
 
 
 //Slider
