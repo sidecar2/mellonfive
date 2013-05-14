@@ -1,4 +1,6 @@
 
+
+
 $(document).ready(function() {
 
 $("#post_tag_list").select2({
@@ -67,7 +69,7 @@ if ( $("p.notice").is(":visible") ) {
 
 setTimeout(function() {
     $('.plus_tag_name').fadeOut('slow');
-}, 5000); 
+}, 7000); 
 
 
 
