@@ -61,6 +61,9 @@ if ( $("p.notice").is(":visible") ) {
  }
 
 
+if ( $(".item_wrap.personal_entry").is(":visible") ) {
+  $(".item.newly_created:last").removeClass("brandnew");
+}
 
 
 
