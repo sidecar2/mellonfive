@@ -6,6 +6,7 @@ $("#post_tag_list").select2({
     allowClear: true
 });
 
+
 // $(".item").mouseover(function(){
 //       $(".tag_name").hide("slow");
 //       $(this).prev(".tag_name").slideToggle("display");
@@ -21,6 +22,8 @@ $("#post_tag_list").select2({
         $(this).prev(".tag_name").show();  
          $(".tag_name").hide();  
     });
+
+
 });
 
 
@@ -58,7 +61,11 @@ $('#links').click(function(){
 if ( $("p.notice").is(":visible") ) {
   $(".item.newly_created:last").addClass("brandnew");
   $(".item_wrap.personal_entry").addClass("new_entry");
+  $(".item_wrap.personal_entry span.tag_name").show();
+
  }
+
+ $(".plus_tag_name").fadeOut('16000');
 
 
 if ( $(".item_wrap.personal_entry").is(":visible") ) {
