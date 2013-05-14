@@ -65,7 +65,10 @@ if ( $("p.notice").is(":visible") ) {
 
  }
 
- $(".plus_tag_name").fadeOut('16000');
+setTimeout(function() {
+    $('.plus_tag_name').fadeOut('slow');
+}, 5000); 
+
 
 
 if ( $(".item_wrap.personal_entry").is(":visible") ) {
