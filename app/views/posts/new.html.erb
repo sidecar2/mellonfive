@@ -12,13 +12,19 @@
 </section>
 <div id="tag_cloud">
 		 
-			<div class="item_wrap personal_entry">
-<% @newtags.each do |newtag| %>
 			
-			<div class="item w16"> <%= newtag.tag_list%> </div>
+<% @newtags.each do |newtag| %>
+
+	<%if newtag.tag_list.empty? %>	
+
+	<%else%>	
+		<div class="item_wrap personal_entry">
+			<div class="item w16"> <%= newtag.tag_list.last %> </div>
 			<span class="tag_name"> <p> + 1  <p> </span>
+				</div>
 <% end %>
-		</div>
+<% end %>
+	
 
 <% tag_cloud Post.tag_counts, %w[w1 w2 w3 w4 w5 w6 w7 w8 w9 w10 w11 w12 w13 w14 w15 w16 w17 w18 w19 w20] do |tag, css_class| %>
 <div class="item_wrap">

@@ -17,13 +17,16 @@ class PostsController < ApplicationController
 	def new
 		@post = Post.new
 		@posts = Post.all
-#		@newtags = Post.order("created_at DESC").limit(1)
+
+	#@newtags = Post.all(:conditions => ["created_at >= ?", DateTime.now - 30.minutes]).order("created_at DESC").limit(1)
+		@newtags = Post.where("created_at >= ?", DateTime.now - 30.seconds).order("created_at DESC").limit(1)
+
 
 #@newtags = Post.where("created_at < '#{Time.now - 2.minutes.ago}'" + \
    #    " OR updated_at < '#{Time.now - 2.minutes.ago}'").order("created_at DESC").limit(1)
 
-		@newtags = Post.where("created_at <= '#{Time.now - 2.minutes}'" + \
-        " OR updated_at <= '#{Time.now - 2.minutes}'").order("created_at DESC").limit(1)
+	#	@newtags = Post.where("created_at <= '#{Time.now - 2.days}'" + \
+     #   " OR updated_at <= '#{Time.now - 3.days}'").order("created_at DESC").limit(1)
 
 #@newtags = Post.tagged_with(params[:tag]).where("created_at >= '#{Time.now - 20.days}'" + \
  #       " OR updated_at >= '#{Time.now - 20.days}'")
