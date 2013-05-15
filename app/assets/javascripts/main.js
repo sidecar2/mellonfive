@@ -1,7 +1,30 @@
+$(window).bind("load", function() {
+    $('#loading').fadeOut(200);
 
+     $(function(){
+    // Self-executing recursive animation
+    (function pulse(){
+        $('.newly_created:odd').delay(2000).fadeOut('slow').delay(00).fadeIn('slow',pulse);
+        $('.newly_created:even').delay(4000).fadeOut('slow').delay(1000).fadeIn('slow',pulse);
+    })();
+});
+});
 
 
 $(document).ready(function() {
+
+
+$('#tag_cloud').masonry({
+  itemSelector: '.item_wrap',
+  isAnimated: true,
+  isFitWidth: true,
+  animationOptions: {
+    duration: 900,
+    easing: 'linear',
+    queue: false
+  }
+});
+
 
 $("#post_tag_list").select2({
     placeholder: "Reading",
@@ -29,13 +52,7 @@ $("#post_tag_list").select2({
 });
 
 
- $(function(){
-    // Self-executing recursive animation
-    (function pulse(){
-        $('.newly_created:odd').delay(2000).fadeOut('slow').delay(500).fadeIn('slow',pulse);
-        $('.newly_created:even').delay(4000).fadeOut('slow').delay(1000).fadeIn('slow',pulse);
-    })();
-});
+
 
 
 // var animateBubbles = function(targetElement, speed){
