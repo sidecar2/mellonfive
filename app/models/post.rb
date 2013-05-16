@@ -5,4 +5,5 @@ class Post < ActiveRecord::Base
    # validates :new_post, obscenity: true
    validates :new_post,  obscenity: { sanitize: true, replacement: "[Obscenity - REMOVE]" }
 	
+   
 end

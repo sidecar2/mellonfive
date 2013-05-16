@@ -13,13 +13,12 @@ $(window).bind("load", function() {
 
 $(document).ready(function() {
 
-
 $('#tag_cloud').masonry({
   itemSelector: '.item_wrap',
   isAnimated: true,
   isFitWidth: true,
   animationOptions: {
-    duration: 900,
+    duration: 1200000,
     easing: 'linear',
     queue: false
   }
@@ -44,6 +43,12 @@ $("#post_tag_list").select2({
     });
 
     $(".item").mouseout(function(){
+        $(this).prev(".tag_name").show();  
+         $(".tag_name").hide();  
+    });
+
+
+   $(".item").click(function(){
         $(this).prev(".tag_name").show();  
          $(".tag_name").hide();  
     });

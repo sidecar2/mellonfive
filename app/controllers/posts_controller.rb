@@ -35,15 +35,22 @@ class PostsController < ApplicationController
 		#@newtags = Post.all(:conditions => ["created_on >= ?", DateTime.now - 2.minutes])
 
 	end
-	
 
-	def create
-		@post = Post.new(params[:post])
-		if @post.save
-			redirect_to :back, :notice => "Magic" #notice: 'Tag was successfully created.'
 
-		else
-			render action: "new"
-		end
+
+
+
+
+
+def create
+ @post = Post.new(params[:post])
+  if @post.save
+	redirect_to :back, :notice => "Magic"
+  	if params[:first_button] 
+    flash[:alert] = "Successfully created project."
 	end
+	else
+		render action: "new"
+ 	 end
+  end
 end
