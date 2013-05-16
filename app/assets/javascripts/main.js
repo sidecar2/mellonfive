@@ -1,13 +1,13 @@
 $(window).bind("load", function() {
     $('#loading').fadeOut(200);
 
-     $(function(){
+    // $(function(){
     // Self-executing recursive animation
-    (function pulse(){
-        $('.newly_created:odd').delay(2000).fadeOut('slow').delay(00).fadeIn('slow',pulse);
-        $('.newly_created:even').delay(4000).fadeOut('slow').delay(1000).fadeIn('slow',pulse);
-    })();
-});
+   // (function pulse(){
+   //     $('.newly_created:odd').delay(2000).fadeOut('slow').delay(00).fadeIn('slow',pulse);
+    //    $('.newly_created:even').delay(4000).fadeOut('slow').delay(1000).fadeIn('slow',pulse);
+ //   })();
+// });
 });
 
 
@@ -18,7 +18,7 @@ $('#tag_cloud').masonry({
   isAnimated: true,
   isFitWidth: true,
   animationOptions: {
-    duration: 1200000,
+    duration: 1000000,
     easing: 'linear',
     queue: false
   }
@@ -36,22 +36,27 @@ $("#post_tag_list").select2({
 //       $(this).prev(".tag_name").slideToggle("display");
 // });
  $(function(){
-    $(".tag_name").hide();
+    $(".tag_name.select_form").hide();
+
+        $(".item.newly_created.brandnew .tag_name.manual").show();
 
     $(".item").mouseover(function(){
-        $(this).prev(".tag_name").show();    
+        $(this).prev(".tag_name.select_form").show();    
     });
 
     $(".item").mouseout(function(){
-        $(this).prev(".tag_name").show();  
-         $(".tag_name").hide();  
+        $(this).prev(".tag_name.select_form").show(); 
+ 
+         $(".tag_name.select_form").hide();  
     });
 
 
    $(".item").click(function(){
-        $(this).prev(".tag_name").show();  
+        $(this).prev(".tag_name.select_form").show();  
          $(".tag_name").hide();  
     });
+
+
 
 
 });
@@ -89,9 +94,18 @@ if ( $("p.notice").is(":visible") ) {
 
  }
 
+$('#tag_cloud .item_wrap .item.newly_created.brandnew').attr('style','display: block !important');
+
+$('.item.newly_created.brandnew').parent('div').addClass('easy');
+
+
+$(".newly_created.brandnew").animate({top:"200px"}, 4000).delay(2000).animate({left:"0px"}, 3000);
+
+
 setTimeout(function() {
     $('.plus_tag_name').fadeOut('slow');
 }, 7000); 
+
 
 
 

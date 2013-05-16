@@ -29,7 +29,7 @@
 
 <% tag_cloud Post.tag_counts, %w[w1 w2 w3 w4 w5 w6 w7 w8 w9 w10 w11 w12 w13 w14 w15 w16 w17 w18 w19 w20] do |tag, css_class| %>
 <div class="item_wrap">
-		<span class="tag_name"> <p> <%= Post.tagged_with(tag).count - 1 %> other people agree </p> </span>
+		<span class="tag_name select_form"> <p> <%= Post.tagged_with(tag).count - 1 %> other people agree </p> </span>
 		<div class="<%= "item #{css_class}" %> ">
 			<%= content_tag :p, tag.name %>
 		</div>
@@ -46,7 +46,7 @@
 
 				<div class="item_wrap">
 					<div class="item newly_created">
-					<span class="tag_name"> <%=post.new_post %></span>
+					<span class="tag_name manual"> <%=post.new_post %></span>
 					</div>
 				</div>
 			<% else %>

@@ -55,7 +55,7 @@ background: #77CDAC;
 background: rgba(119, 205, 171, 0.76) url('/assets/siteload.gif') no-repeat center;
 height: 100%; width: 100%;
 position: fixed; left: 0; top: 0; right: 0; bottom: 0; z-index: 1000;
-margin: -25px 0 0 -25px;
+margin: 0;
 }
 
 
