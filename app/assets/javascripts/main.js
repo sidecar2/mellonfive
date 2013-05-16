@@ -13,12 +13,13 @@ $(window).bind("load", function() {
 
 $(document).ready(function() {
 
+
 $('#tag_cloud').masonry({
   itemSelector: '.item_wrap',
   isAnimated: true,
   isFitWidth: true,
   animationOptions: {
-    duration: 1000000,
+    duration: 199000,
     easing: 'linear',
     queue: false
   }
@@ -184,14 +185,14 @@ function changeColor(curNumber){
         $('body').addClass('color' + curNumber);
 
         // remove
-        $('body').removeClass('color' + 160, 600);
+        $('body').removeClass('color' + 160, 500);
     } else {
         $('body').addClass('color' + curNumber, 400);
         // add
         $('body').attr('class', 'color' + curNumber);
     }
     console.log(curNumber);
-    setTimeout(function(){changeColor(curNumber)}, 600); } 
+    setTimeout(function(){changeColor(curNumber)}, 500); } 
 
 changeColor(0); 
 
