@@ -31,7 +31,6 @@ $("#post_tag_list").select2({
     allowClear: true
 });
 
-
 // $(".item").mouseover(function(){
 //       $(".tag_name").hide("slow");
 //       $(this).prev(".tag_name").slideToggle("display");
@@ -88,6 +87,10 @@ $('#links').click(function(){
         $(this).toggleClass('uppety');
     });
 
+$("#mailing_list").click(function(){
+   $('.embed_form').slideToggle("fast"); 
+});
+
 if ( $("p.notice").is(":visible") ) {
   $(".item.newly_created:last").addClass("brandnew");
   $(".item_wrap.personal_entry").addClass("new_entry");
@@ -113,6 +116,7 @@ setTimeout(function() {
 if ( $(".item_wrap.personal_entry").is(":visible") ) {
   $(".item.newly_created:last").removeClass("brandnew");
 }
+
 
 
 

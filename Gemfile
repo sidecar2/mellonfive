@@ -33,7 +33,7 @@ gem 'jquery-ui-rails'
 gem "select2-rails"
 gem "colorbox-rails", "~> 0.0.3"
 gem 'obscenity'
-
+gem 'draper', '~> 1.0'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
