@@ -15,7 +15,7 @@ $(document).ready(function() {
 
 
 $('#tag_cloud').masonry({
-  itemSelector: '.item_wrap',
+  itemSelector: '#tag_cloud .item.newly_created',
   isAnimated: true,
   isFitWidth: true,
   animationOptions: {
@@ -93,22 +93,29 @@ $("#mailing_list").click(function(){
 
 if ( $("p.notice").is(":visible") ) {
   $(".item.newly_created:last").addClass("brandnew");
-  $(".item_wrap.personal_entry").addClass("new_entry");
-  $(".item_wrap.personal_entry span.tag_name").show();
+  $(".personal_entry").addClass("new_entry");
+  $(".personal_entry span.tag_name").show();
 
  }
 
-$('#tag_cloud .item_wrap .item.newly_created.brandnew').attr('style','display: block !important');
+$('#tag_cloud .item.newly_created.brandnew').attr('style','display: block !important');
 
 $('.item.newly_created.brandnew').parent('div').addClass('easy');
 
 
 $(".newly_created.brandnew").animate({top:"200px"}, 4000).delay(2000).animate({left:"0px"}, 3000);
 
+$('.item_wrap.personal_entry.new_entry').attr('style','display: block !important');
+$(".item_wrap.personal_entry.new_entry").animate({top:"200px"}, 4000).delay(2000).animate({right:"0px"}, 3000);
+
 
 setTimeout(function() {
     $('.plus_tag_name').fadeOut('slow');
-}, 7000); 
+}, 5000); 
+
+setTimeout(function() {
+    $('.item_wrap.personal_entry.new_entry').fadeOut('slow');
+}, 3500); 
 
 
 
@@ -176,6 +183,8 @@ if ( $(".item_wrap.personal_entry").is(":visible") ) {
 //     }
 //     });
 // });
+
+
 
 
 function changeColor(curNumber){

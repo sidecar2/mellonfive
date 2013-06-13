@@ -15,5 +15,5 @@
 //= require_tree .
 //= require jquery.ui.core
 //= require selectjs
-//= require masonry
+
 //= require main
